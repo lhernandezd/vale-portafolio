@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import ProjectDescription from "../../components/ProjectDescription.astro";
+import project2Img from "../../assets/project2/project_2_banner.webp";
+import project2Img2 from "../../assets/project2/2.webp";
+import project2Img3 from "../../assets/project2/3.webp";
+import project2Img4 from "../../assets/project2/4.webp";
+import project2Img5 from "../../assets/project2/5.webp";
+import project2Img6 from "../../assets/project2/6.webp";
+import project2Img7 from "../../assets/project2/7.webp";
+import project2Img8 from "../../assets/project2/8.webp";
+import project2Img9 from "../../assets/project2/9.webp";
+import project2Img10 from "../../assets/project2/10.webp";
+import project2Img11 from "../../assets/project2/11.webp";
+import project2Img12 from "../../assets/project2/12.webp";
+import project2Img13 from "../../assets/project2/13.webp";
+import project2Img14 from "../../assets/project2/14.webp";
+
+const projectName = "MusterUp - UX Case Study";
+---
+
+<Layout title={`${projectName}`} customClasses="white">
+  <section class="banner image-section">
+    <Image
+      loading="eager"
+      class="banner-image"
+      src={project2Img}
+      alt={`${projectName}`}
+    />
+  </section>
+  <section class="content">
+    <ProjectDescription
+      title={`${projectName}`}
+      description="Create events and be in sync! Planning made simple."
+      tasks={["UX/UI Design", "UX Research", "Prototyping", "Illustration"]}
+      details={[
+        {
+          title: "The Goal",
+          description:
+            "Facilitate users in the planning and coordination process of time and common interests in carrying out joint activities, through the use of an app that intuitively and dynamically carries out the realization of a proposed plan in the shortest possible time.",
+        },
+        {
+          title: "The Solution",
+          description:
+            "An app designed to facilitate the process of carrying out a group activity quickly and efficiently. With an intuitive interface and functions that allow users to schedule, recommend, view and remind them of the events they want to hold.",
+        },
+      ]}
+    />
+    <div class="image-section">
+      <Image src={project2Img2} alt="Work progress" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img3} alt="Site map" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img4} alt="User flow" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img5} alt="Wireframes" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img7} alt="Wireframes by hand" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img6} alt="Wireframes medium fidelity" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img8} alt="Design Concept" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img10} alt="UI Kit" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img9} alt="Icon Design" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img12} alt="Illustrations" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img11} alt="Components" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img13} alt="Screens" />
+    </div>
+    <div class="image-section">
+      <Image src={project2Img14} alt="More Screens" />
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import LayoutWideBanner from "../../layouts/LayoutWideBanner.astro";
+import ProjectDescription from "../../components/ProjectDescription.astro";
+import project4Img from "../../assets/project4/project_4_banner.webp";
+import project4Img2 from "../../assets/project4/2_project4.webp";
+
+const projectName = "Co-Star - UI Case Study";
+---
+
+<LayoutWideBanner dark title={`${projectName}`} customClasses="darkv2">
+  <section class="banner image-section">
+    <Image
+      loading="eager"
+      class="banner-image"
+      src={project4Img}
+      alt={`${projectName}`}
+    />
+  </section>
+  <section class="content default-max-width">
+    <ProjectDescription
+      dark
+      title={`${projectName}`}
+      description="Digital horoscope made different."
+      tasks={["UX/UI Design", "Illustration", "Figma"]}
+      details={[
+        {
+          title: "The Goal",
+          description: "Re-think the landing page experience for Co-Star.",
+        },
+        {
+          title: "The Solution",
+          description:
+            "A very interesting illustrated landing page that is eye-catching and keeps the user scrolling down to discover more about the experience.",
+        },
+      ]}
+    />
+    <div class="image-section">
+      <Image src={project4Img2} alt="Web Page" />
+    </div>
+  </section>
+</LayoutWideBanner>

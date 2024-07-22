@@ -1,0 +1,67 @@
+---
+import Pill from "./Pill.astro";
+
+interface Props {
+  name: string;
+  description: string;
+  tasks: string[];
+  image: string;
+  link: string;
+  wide?: boolean;
+}
+
+const { name, description, tasks, image, link, wide } = Astro.props;
+---
+
+<div class:list={["card", { wide: wide }]} class="card">
+  <a class="card-image-link" href={link} aria-label="Card Image"></a>
+  <div class="card-description">
+    <a class="name" href={link}>{name}</a>
+    <p class="description">{description}</p>
+    <p class="tasks"><strong>Work: </strong> {tasks?.join(", ")}</p>
+    <div class="action">
+      <Pill link={link} text="View Project" />
+    </div>
+  </div>
+</div>
+
+<style define:vars={{ image: `url("${image}")` }}>
+  .card {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  .card.wide {
+    grid-column: span 2 / span 2;
+  }
+  .card .card-image-link {
+    background-image: var(--image);
+    background-size: cover;
+    background-position: 50%;
+    height: 460px;
+    border-radius: 16px;
+  }
+  .card .card-description {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  .card .card-description .name {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 34px;
+  }
+  .card .card-description p {
+    opacity: 0.6;
+  }
+  .card .card-description .action {
+    margin-top: 20px;
+  }
+  @media (max-width: 590px) {
+    .card.wide {
+      grid-column: span 1 / span 1;
+    }
+  }
+</style>

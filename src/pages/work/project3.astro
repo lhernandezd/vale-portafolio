@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import ProjectDescription from "../../components/ProjectDescription.astro";
+import project3Img from "../../assets/project3/project_3_banner.webp";
+import project3Img2 from "../../assets/project3/2_project3.webp";
+
+const projectName = "Clauproraiz - Real State Website";
+---
+
+<Layout title={`${projectName}`}>
+  <section class="banner image-section">
+    <Image
+      loading="eager"
+      class="banner-image"
+      src={project3Img}
+      alt={`${projectName}`}
+    />
+  </section>
+  <section class="content">
+    <ProjectDescription
+      title={`${projectName}`}
+      description="Clauporaíz is a real state website that helps users find their perfect place."
+      tasks={["UX/UI Design"]}
+      details={[
+        {
+          title: "The Goal",
+          description:
+            "Update the landing page interface to be modern, interesting and easy to use. Eye-catching and make users interact more.",
+        },
+        {
+          title: "The Solution",
+          description:
+            "A very clean but inetersting landing page with the main and most relevant actions at the top.",
+        },
+      ]}
+    />
+    <div class="image-section">
+      <Image src={project3Img2} alt="Web Page" />
+    </div>
+  </section>
+</Layout>
