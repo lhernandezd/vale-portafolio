@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import ProjectDescription from "../../components/ProjectDescription.astro";
+import project6Img from "../../assets/project6/project_6_banner.webp";
+import project6Img2 from "../../assets/project6/2.webp";
+import project6Img3 from "../../assets/project6/3.webp";
+import project6Img4 from "../../assets/project6/4.webp";
+
+const projectName = "Valiant's Legacy - Gaming Platform UI";
+---
+
+<Layout title={`${projectName}`} dark>
+  <section class="banner image-section">
+    <Image
+      loading="eager"
+      class="banner-image"
+      src={project6Img}
+      alt={`${projectName}`}
+    />
+  </section>
+  <section class="content">
+    <ProjectDescription
+      dark
+      title={`${projectName}`}
+      description="Gaming Platform UI."
+      tasks={["UX/UI Design", "UX Research", "Prototyping"]}
+      details={[
+        {
+          title: "Summary",
+          description: `The challenge was to re-design an existing gaming interface that allows users to take accurate decisions based on data presented and under a time limit.
+This interface is a defense system control panel for a fleet of spaceships that are under attack, that is why it should be intuitive, clean, and easy to read under pressure.`,
+        },
+        {
+          title: "Top Issues",
+          description: [
+            "Information overload: the previous interface presented unformatted data that was not easy to understand, making it impossible to act on time against threats.",
+            "Not intuitive enough: Controls were complex and users required training to understand them.",
+            "Limited prediction tools: There were no tools to predict the enemies attacks.",
+            "Confusion and frustration: Since the interface visually overwhelming it led to users making mistakes or rushed decisions.",
+          ],
+        },
+      ]}
+    />
+    <div class="image-section">
+      <Image src={project6Img2} alt="Radar Interface UI" />
+    </div>
+    <div class="image-section">
+      <Image src={project6Img3} alt="Radar Interface Confirmation Pop Up" />
+    </div>
+    <div class="image-section">
+      <Image
+        src={project6Img4}
+        alt="Radar Interface Confirmation Pop Up Success"
+      />
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import ProjectDescription from "../../components/ProjectDescription.astro";
+import project5Img from "../../assets/project5/project_5_banner.webp";
+import project5Img2 from "../../assets/project5/2.webp";
+import project5Img3 from "../../assets/project5/3.webp";
+
+const projectName = "InsightAI - AI powered E-Learning Platform";
+---
+
+<Layout title={`${projectName}`} customClasses="white">
+  <section class="banner image-section">
+    <Image
+      loading="eager"
+      class="banner-image"
+      src={project5Img}
+      alt={`${projectName}`}
+    />
+  </section>
+  <section class="content">
+    <ProjectDescription
+      fullWidthDescription
+      title={`${projectName}`}
+      description="AI-powered learning platform."
+      tasks={["UX/UI Design", "UX Research", "Prototyping"]}
+      details={[
+        {
+          title: "About the project",
+          description: [
+            "Insight AI is an AI-powered learning platform tailored to college students aiming to enhance their skills.",
+            "The platform offers personalized learning paths, AI-generated suggestions, and 24/7 support. Users can track progress, access related resources, and utilize features like note-taking and feedback requests.",
+            "The design focuses on user experience, intuitive navigation, and a modern aesthetic, aiming to support a smooth learning journey.",
+          ],
+        },
+      ]}
+    />
+    <div class="image-section">
+      <Image src={project5Img2} alt="Low-fi Wireframes" />
+    </div>
+    <div class="image-section">
+      <Image src={project5Img3} alt="Hi-fi Wireframes" />
+    </div>
+  </section>
+</Layout>

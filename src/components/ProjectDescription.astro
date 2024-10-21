@@ -1,7 +1,7 @@
 ---
 interface ProjectDetails {
   title: string;
-  description: string;
+  description: string | string[];
 }
 
 interface Props {
@@ -11,9 +11,10 @@ interface Props {
   tasks: string[];
   details: ProjectDetails[];
   dark?: boolean;
+  fullWidthDescription?: boolean;
 }
 
-const { title, subtitles, tasks, dark, description, details } = Astro.props;
+const { title, subtitles, tasks, dark, description, details, fullWidthDescription } = Astro.props;
 ---
 
 <div class="project-description">
@@ -42,12 +43,12 @@ const { title, subtitles, tasks, dark, description, details } = Astro.props;
         }
       </div>
     </div>
-    <div class="content-details">
+    <div class:list={["content-details", { 'full-width': fullWidthDescription }]}>
       {
         details.map((detail) => (
           <div class="detail">
             <h3 class="title">{detail.title}</h3>
-            <p class="description">{detail.description}</p>
+            {Array.isArray(detail.description) ? detail.description.map((item) => <p class="description">{item}</p>) : <p class="description">{detail.description}</p>}
           </div>
         ))
       }
@@ -104,12 +105,16 @@ const { title, subtitles, tasks, dark, description, details } = Astro.props;
     grid-template-rows: auto auto auto;
     grid-template-columns: 1fr 1fr;
   }
+  .project-description .content .content-details.full-width {
+    grid-template-columns: 1fr;
+  }
   .project-description .content .content-details .title {
     font-size: 20px;
     font-weight: 400;
     line-height: 34px;
   }
   .project-description .content .content-details .description {
+    margin-bottom: 5px;
     opacity: 0.6;
   }
   @media (max-width: 1023px) {
